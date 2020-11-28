@@ -113,4 +113,7 @@ mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
 
 # Se borran los ficheros html del mapa
  rm ${CARPETA}/${HOY}_mapa-covid.html
+ 
+ 
+# Pendiente incluir subida automatica Github
 
