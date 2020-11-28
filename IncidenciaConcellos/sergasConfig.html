@@ -1,0 +1,113 @@
+﻿{
+    "DEFAULT_LANG": "gl-ES",
+
+    "SECTIONS_COLLAPSED": false,
+
+    "SHOW_FLOATING_INFO": false,
+
+    "DATA_SOURCE": {
+      "ATTEMPT_DATE_TODAY": false,
+      "FORMAT": "csv",
+      "FORMAT_CSV": {
+        "SEPARATOR": ",",
+        "DELIMITER": "\""
+      },
+      "MAX_ATTEMPTS": 5,
+      "FILES": [
+        {
+          "COMMENT": "Origen de datos para la sección de cifras totales",
+          "NAME": "totals",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_CifrasTotais.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_CifrasTotais.csv"
+        },
+        {
+          "COMMENT": "Origen de datos para la sección 'Número de persoas con infección activa, curados e falecidos'",
+          "NAME": "active_recovered_deceased",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_ActivosCuradosFallecidos.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_ActivosCuradosFallecidos.csv"
+        },
+        {
+          "COMMENT": "Origen de datos para la sección 'Número de personas diagnosticadas a través de PCR, por fecha'",
+          "NAME": "date_accumulate",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_InfectadosPorFecha.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_InfectadosPorFecha.csv"
+        },
+        {
+          "COMMENT": "Origen de datos para la sección 'Número de personas infectadas, por género'",
+          "NAME": "gender",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_PorcentajeInfectadosPorGenero.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_PorcentajeInfectadosPorGenero.csv"
+        },
+        {
+          "COMMENT": "Origen de datos para la sección 'Porcentaje de fallecidos, por edad'",
+          "NAME": "pc_deceased_age",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_Fallecidos.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_Fallecidos.csv"
+        },
+        {
+          "COMMENT": "Origen de datos para la sección 'Porcentaje de infecciones por test realizados'",
+          "NAME": "pc_tests",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_PorcentajeInfeccionesPorFecha.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_PorcentajeInfeccionesPorFecha.csv"
+        },
+        {
+          "COMMENT": "Origen de datos para la sección 'Distribución de datos por hospitales'",
+          "NAME": "hospital_beds",
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_OcupacionCamasHospital.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_OcupacionCamasHospital.csv"
+        }
+      ],
+      "FALLBACK_ENABLED": true
+    },
+
+    "DEFAULT_AREA": "galicia",
+
+    "AREAS": [
+      {
+        "key": "galicia",
+        "data": "GALICIA"
+      },
+      {
+        "key": "coruna",
+        "data": "A.S. A CORUÑA E CEE"
+      },
+      {
+        "key": "ferrol",
+        "data": "A.S. FERROL"
+      },
+      {
+        "key": "lugo",
+        "data": "A.S. LUGO, A MARIÑA E MONFORTE"
+      },
+      {
+        "key": "ourense",
+        "data": "A.S. OURENSE, VERÍN E O BARCO"
+      },
+      {
+        "key": "pontevedra",
+        "data": "A.S. PONTEVEDRA E O SALNÉS"
+      },
+      {
+        "key": "santiago",
+        "data": "A.S. SANTIAGO E BARBANZA"
+      },
+      {
+        "key": "vigo",
+        "data": "A.S. VIGO"
+      }
+   ],
+
+   "DATA": {
+     "GENDER": {
+       "VALUE": {
+         "M": "HOMES",
+         "W": "MULLERES"
+       }
+     }
+   },
+
+   "MAPS_DATAWRAPPER": {
+     "URL": "https://datawrapper.dwcdn.net/{ID}/?cache={TIMESTAMP}",
+     "CASES_MAP": "jKpTc"
+   }
+}

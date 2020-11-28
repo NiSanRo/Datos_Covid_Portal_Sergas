@@ -12,8 +12,27 @@ devuelveCarpetaEjecucion
 
 HOY=$(date +"%Y%m%d")
 AYER=$(date -d @$(($(date "+%s")-86400)) "+%d-%m-%Y")
+# Se obtiene la ultima fecha cargada
+ULTIMA_FECHA=`tail -1 ${CARPETA}/historico_incidencia_concello.csv |awk '{l=split($0,datos,";"); print datos[1];}'`
+
+# Se comprueba la diferencia entre fechas. Si es 0 no se realiza carga
+# Hay que tener en cuenta que date no admite el formato %d-%m-%Y por lo que aplicamos
+# un comando sed para invertir las cadenas y que tengan formato %Y-%m-%d que si se admite
+# Ejemplo:  date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<<"27-11-2020")
+# Check: echo ` date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) `
+DIAS=$(( (`date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${AYER}) +"%s"`-`date -d date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) "+%s"`)/86400 ))
 
 echo "Descarga de incidencias acumuladas por Concello para el dia: ${AYER}"
+echo "Ultima fecha cargada: ${ULTIMA_FECHA}"
+echo "Diferencia de dias: " ${DIAS} 
+
+# Si el ultimo dia cargado corresponde con el de ayer, no se realiza la carga
+if [ ${DIAS} -eq 0 ]
+then
+	echo "Ya estan cargados los datos mas actualizados"
+	exit
+fi
+
 
 # La URL para descargar el mapa tiene formato:
 # https://datawrapper.dwcdn.net/jKpTc/1/
@@ -28,7 +47,8 @@ echo "Descarga de incidencias acumuladas por Concello para el dia: ${AYER}"
 # 1.- Descargar el fichero de configuracion del Sergas
 wget -O ${CARPETA}/sergasConfig.html https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt
 
-# 2.- Filtramos la linez con CASE_MAP para obtener el Id del Mapa
+
+# 2.- Filtramos la linea con CASE_MAP para obtener el Id del Mapa
 
 IDENTIFICADOR=`cat ${CARPETA}/sergasConfig.html | grep CASES_MAP | awk '{l=split($0,datos,"\""); print datos[4];}'`
 echo "Identificador del fichero datos/redireccion: ${IDENTIFICADOR}"
@@ -84,11 +104,13 @@ cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' |
 
 # Para cargarse la primera línea del fichero:  tail -n+2
 
+
+
 # Se concatena el nuevo fichero en el historico
 
 awk 'FNR==1 && NR!=1 { while (/^Fecha;/) getline; } 1 {print} ' ${CARPETA}/historico_incidencia_concello.csv ${CARPETA}/${HOY}_incidencia_concello.csv > ${CARPETA}/prov.csv
 mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
 
 # Se borran los ficheros html del mapa
- rm  *mapa*.html
+ rm ${CARPETA}/${HOY}_mapa-covid.html
 
