@@ -26,6 +26,7 @@ echo "Descarga de incidencias acumuladas por Concello para el dia: ${AYER}"
 echo "Ultima fecha cargada: ${ULTIMA_FECHA}"
 echo "Diferencia de dias: " ${DIAS} 
 
+
 # Si el ultimo dia cargado corresponde con el de ayer, no se realiza la carga
 if [ ${DIAS} -eq 0 ]
 then
@@ -117,3 +118,16 @@ mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
  
 # Pendiente incluir subida automatica Github
 
+cd ${CARPETA}
+
+# GIT: Anhadir todos los nuevos ficheros en local
+# a: anhadir
+# *: todos
+# q: salir
+echo  -e "a\n*\nq\n" | git add -i
+
+# Ahora se hace el commit
+git commit -a -m "Nuevos ficheros datos incidencia ${AYER}" 
+
+# Ahora se realiza el push al main de Github NiSanRo
+git push origin main
