@@ -71,17 +71,31 @@ echo "Identificador del fichero datos/redireccion: ${IDENTIFICADOR}"
 # <html><head><meta http-equiv="REFRESH" content="0; url=https://datawrapper.dwcdn.net/jKpTc/5/"></head></html>
 
 # 4.- Se da por supuesto que es un REFRESH, y se tiene que descargar otro fichero
-#     se intenta coger el nombre de ese fichero y si la cadena tiene longitud 0 es que no 
+#     se intenta coger el nombre de ese fichero y si la cadena tiene longitud 0 es que  
 #     no se trata de la redireccion esperada
 
 nuevoFichero=`cat  ${CARPETA}/${HOY}_mapa-covid.html | grep REFRESH |  awk '{l=split($0,datos,"\"");l=split(datos[4],url,"=");print url[2];}'`
-if [ -z "${nuevoFichero}" ]; then
-    echo "No hay redireccion"
-else
+# 20/12/2020: Se detectan dos redirecciones en los ficheros html
+# Cuando la cadena sea nula (no hay REFRESH) se para la ejecucion del bucle
+#  -z: la cadena es nula
+#  -n: la cadena es no nula
+
+#if [ -z "${nuevoFichero}" ]; then
+#    echo "No hay redireccion"
+#else
+#	echo "Se descarga el fichero de datos: ${nuevoFichero}"
+#	wget -O ${CARPETA}/${HOY}_mapa-covid.html ${nuevoFichero}
+#fi
+
+
+while [ -n "${nuevoFichero}" ]
+do 
+	echo "Redireccion..."
 	echo "Se descarga el fichero de datos: ${nuevoFichero}"
 	wget -O ${CARPETA}/${HOY}_mapa-covid.html ${nuevoFichero}
-fi
-
+	nuevoFichero=`cat  ${CARPETA}/${HOY}_mapa-covid.html | grep REFRESH |  awk '{l=split($0,datos,"\"");l=split(datos[4],url,"=");print url[2];}'`
+	echo ${nuevoFichero}
+done 
 
 # 
 # Ahora estamos seguros de tener el fichero ${HOY}_mapa-covid.html los datos de incidencia acumulada por Concello
@@ -98,7 +112,6 @@ fi
 
 cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' |awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello"," :0",$0); l=split($0,datos,",");l=split(datos[3],novos,":"); if (l>=2) { print fecha";"datos[1]";"datos[2]";"novos[2]";"datos[4]} else { print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]}}' | sed \$d  > ${CARPETA}/${HOY}_incidencia_concello.csv
 
-
 #
 # Se añade el fichero al acumulado
 #
@@ -106,17 +119,17 @@ cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' |
 # Para cargarse la primera línea del fichero:  tail -n+2
 
 
-
 # Se concatena el nuevo fichero en el historico
 
 awk 'FNR==1 && NR!=1 { while (/^Fecha;/) getline; } 1 {print} ' ${CARPETA}/historico_incidencia_concello.csv ${CARPETA}/${HOY}_incidencia_concello.csv > ${CARPETA}/prov.csv
 mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
 
+
 # Se borran los ficheros html del mapa
  rm ${CARPETA}/${HOY}_mapa-covid.html
  
  
-# Pendiente incluir subida automatica Github
+# Subida automatica Github
 
 cd ${CARPETA}
 
