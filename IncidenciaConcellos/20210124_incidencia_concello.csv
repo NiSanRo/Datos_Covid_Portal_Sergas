@@ -1,0 +1,314 @@
+Fecha;ID;NOME;CASOS;NIVEL
+23-01-2021;34121515001;ABEGONDO; 36;Incidencia acumulada para o concello: >250
+23-01-2021;34121515002;AMES; 161;Incidencia acumulada para o concello: >250
+23-01-2021;34121515003;ARANGA; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34121515004;ARES; 28;Incidencia acumulada para o concello: >250
+23-01-2021;34121515005;ARTEIXO; 562;Incidencia acumulada para o concello: >250
+23-01-2021;34121515006;ARZUA; 54;Incidencia acumulada para o concello: >250
+23-01-2021;34121515007;BAÑA (A); 17;Incidencia acumulada para o concello: >250
+23-01-2021;34121515008;BERGONDO; 35;Incidencia acumulada para o concello: >250
+23-01-2021;34121515009;BETANZOS; 162;Incidencia acumulada para o concello: >250
+23-01-2021;34121515010;BOIMORTO; 11;Incidencia acumulada para o concello: >250
+23-01-2021;34121515011;BOIRO; 54;Incidencia acumulada para o concello: >250
+23-01-2021;34121515012;BOQUEIXON; 65;Incidencia acumulada para o concello: >250
+23-01-2021;34121515013;BRION; 44;Incidencia acumulada para o concello: >250
+23-01-2021;34121515014;CABANA DE BERGANTIÑOS; 16;Incidencia acumulada para o concello: >250
+23-01-2021;34121515015;CABANAS; 36;Incidencia acumulada para o concello: >250
+23-01-2021;34121515016;CAMARIÑAS; 77;Incidencia acumulada para o concello: >250
+23-01-2021;34121515017;CAMBRE; 251;Incidencia acumulada para o concello: >250
+23-01-2021;34121515018;CAPELA (A); entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34121515019;CARBALLO; 299;Incidencia acumulada para o concello: >250
+23-01-2021;34121515020;CARNOTA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34121515021;CARRAL; 47;Incidencia acumulada para o concello: >250
+23-01-2021;34121515022;CEDEIRA; 63;Incidencia acumulada para o concello: >250
+23-01-2021;34121515023;CEE; 45;Incidencia acumulada para o concello: >250
+23-01-2021;34121515024;CERCEDA; 74;Incidencia acumulada para o concello: >250
+23-01-2021;34121515025;CERDIDO; 14;Incidencia acumulada para o concello: >250
+23-01-2021;34121515027;COIROS; 19;Incidencia acumulada para o concello: >250
+23-01-2021;34121515028;CORCUBION; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34121515029;CORISTANCO; 63;Incidencia acumulada para o concello: >250
+23-01-2021;34121515030;CORUÑA (A); 1941;Incidencia acumulada para o concello: >250
+23-01-2021;34121515031;CULLEREDO; 231;Incidencia acumulada para o concello: >250
+23-01-2021;34121515032;CURTIS; 11;Incidencia acumulada para o concello: >250
+23-01-2021;34121515033;DODRO; 29;Incidencia acumulada para o concello: >250
+23-01-2021;34121515034;DUMBRIA; 36;Incidencia acumulada para o concello: >250
+23-01-2021;34121515035;FENE; 147;Incidencia acumulada para o concello: >250
+23-01-2021;34121515036;FERROL; 386;Incidencia acumulada para o concello: >250
+23-01-2021;34121515037;FISTERRA; 29;Incidencia acumulada para o concello: >250
+23-01-2021;34121515038;FRADES; 20;Incidencia acumulada para o concello: >250
+23-01-2021;34121515039;IRIXOA; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34121515040;LAXE; 31;Incidencia acumulada para o concello: >250
+23-01-2021;34121515041;LARACHA; 118;Incidencia acumulada para o concello: >250
+23-01-2021;34121515042;LOUSAME; 15;Incidencia acumulada para o concello: >250
+23-01-2021;34121515043;MALPICA DE BERGANTIÑOS; 39;Incidencia acumulada para o concello: >250
+23-01-2021;34121515044;MAÑON; 50;Incidencia acumulada para o concello: >250
+23-01-2021;34121515045;MAZARICOS; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34121515046;MELIDE; 64;Incidencia acumulada para o concello: >250
+23-01-2021;34121515047;MESIA; 14;Incidencia acumulada para o concello: >250
+23-01-2021;34121515048;MIÑO; 27;Incidencia acumulada para o concello: >250
+23-01-2021;34121515049;MOECHE; 47;Incidencia acumulada para o concello: >250
+23-01-2021;34121515050;MONFERO; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34121515051;MUGARDOS; 61;Incidencia acumulada para o concello: >250
+23-01-2021;34121515052;MUXIA; 29;Incidencia acumulada para o concello: >250
+23-01-2021;34121515053;MUROS; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34121515054;NARON; 250;Incidencia acumulada para o concello: >250
+23-01-2021;34121515055;NEDA; 42;Incidencia acumulada para o concello: >250
+23-01-2021;34121515056;NEGREIRA; 34;Incidencia acumulada para o concello: >250
+23-01-2021;34121515057;NOIA; 59;Incidencia acumulada para o concello: >250
+23-01-2021;34121515058;OLEIROS; 202;Incidencia acumulada para o concello: >250
+23-01-2021;34121515059;ORDES; 82;Incidencia acumulada para o concello: >250
+23-01-2021;34121515060;OROSO; 61;Incidencia acumulada para o concello: >250
+23-01-2021;34121515061;ORTIGUEIRA; 94;Incidencia acumulada para o concello: >250
+23-01-2021;34121515062;OUTES; 24;Incidencia acumulada para o concello: >250
+23-01-2021;34121515064;PADERNE; 10;Incidencia acumulada para o concello: >250
+23-01-2021;34121515065;PADRON; 122;Incidencia acumulada para o concello: >250
+23-01-2021;34121515066;PINO (O); 31;Incidencia acumulada para o concello: >250
+23-01-2021;34121515067;POBRA DO CARAMIÑAL A; 23;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34121515068;PONTECESO; 22;Incidencia acumulada para o concello: >250
+23-01-2021;34121515069;PONTEDEUME; 86;Incidencia acumulada para o concello: >250
+23-01-2021;34121515070;PONTES DE GARCIA RODRIGUEZ (AS); 35;Incidencia acumulada para o concello: >250
+23-01-2021;34121515071;PORTO DO SON; 35;Incidencia acumulada para o concello: >250
+23-01-2021;34121515072;RIANXO; 41;Incidencia acumulada para o concello: >250
+23-01-2021;34121515073;RIBEIRA; 140;Incidencia acumulada para o concello: >250
+23-01-2021;34121515074;ROIS; 86;Incidencia acumulada para o concello: >250
+23-01-2021;34121515075;SADA; 155;Incidencia acumulada para o concello: >250
+23-01-2021;34121515076;SAN SADURNIÑO; 34;Incidencia acumulada para o concello: >250
+23-01-2021;34121515077;SANTA COMBA; 33;Incidencia acumulada para o concello: >250
+23-01-2021;34121515078;SANTIAGO DE COMPOSTELA; 652;Incidencia acumulada para o concello: >250
+23-01-2021;34121515079;SANTISO; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34121515080;SOBRADO; 14;Incidencia acumulada para o concello: >250
+23-01-2021;34121515081;SOMOZAS; 17;Incidencia acumulada para o concello: >250
+23-01-2021;34121515082;TEO; 71;Incidencia acumulada para o concello: >250
+23-01-2021;34121515083;TOQUES; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34121515084;TORDOIA; 21;Incidencia acumulada para o concello: >250
+23-01-2021;34121515085;TOURO; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34121515086;TRAZO; 18;Incidencia acumulada para o concello: >250
+23-01-2021;34121515087;VALDOVIÑO; 37;Incidencia acumulada para o concello: >250
+23-01-2021;34121515088;VAL DO DUBRA; 57;Incidencia acumulada para o concello: >250
+23-01-2021;34121515089;VEDRA; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34121515090;VILASANTAR; 21;Incidencia acumulada para o concello: >250
+23-01-2021;34121515091;VILARMAIOR; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34121515092;VIMIANZO; 89;Incidencia acumulada para o concello: >250
+23-01-2021;34121515093;ZAS; 20;Incidencia acumulada para o concello: >250
+23-01-2021;34121515901;CARIÑO; 18;Incidencia acumulada para o concello: >250
+23-01-2021;34121515902;OZA-CESURAS; 42;Incidencia acumulada para o concello: >250
+23-01-2021;34122727001;ABADIN; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727002;ALFOZ; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727003;ANTAS DE ULLA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727004;BALEIRA;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727005;BARREIROS; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727006;BECERREA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727007;BEGONTE; 12;Incidencia acumulada para o concello: >250
+23-01-2021;34122727008;BOVEDA; 11;Incidencia acumulada para o concello: >250
+23-01-2021;34122727009;CARBALLEDO;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727010;CASTRO DE REI; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727011;CASTROVERDE; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727012;CERVANTES;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727013;CERVO; 17;Incidencia acumulada para o concello: >250
+23-01-2021;34122727014;CORGO (O); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727015;COSPEITO; entre 1 e 9;Incidencia acumulada para o concello: >25 e <=50
+23-01-2021;34122727016;CHANTADA; 33;Incidencia acumulada para o concello: >250
+23-01-2021;34122727017;FOLGOSO DO COUREL; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727018;FONSAGRADA (A); entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727019;FOZ; 12;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727020;FRIOL; 10;Incidencia acumulada para o concello: >250
+23-01-2021;34122727021;XERMADE;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727022;GUITIRIZ; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727023;GUNTIN; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727024;INCIO (O); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727025;XOVE; 78;Incidencia acumulada para o concello: >250
+23-01-2021;34122727026;LANCARA; 17;Incidencia acumulada para o concello: >250
+23-01-2021;34122727027;LOURENZA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727028;LUGO; 279;Incidencia acumulada para o concello: >250
+23-01-2021;34122727029;MEIRA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727030;MONDOÑEDO; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727031;MONFORTE DE LEMOS; 145;Incidencia acumulada para o concello: >250
+23-01-2021;34122727032;MONTERROSO; 10;Incidencia acumulada para o concello: >250
+23-01-2021;34122727033;MURAS; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727034;NAVIA DE SUARNA;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727035;NEGUEIRA DE MUÑIZ;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727037;NOGAIS (AS); entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727038;OUROL; 10;Incidencia acumulada para o concello: >250
+23-01-2021;34122727039;OUTEIRO DE REI; 15;Incidencia acumulada para o concello: >250
+23-01-2021;34122727040;PALAS DE REI; 41;Incidencia acumulada para o concello: >250
+23-01-2021;34122727041;PANTON; 17;Incidencia acumulada para o concello: >250
+23-01-2021;34122727042;PARADELA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727043;PARAMO (O);0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727044;PASTORIZA (A); 33;Incidencia acumulada para o concello: >250
+23-01-2021;34122727045;PEDRAFITA DO CEBREIRO; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727046;POL; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727047;POBRA DO BROLLON (A); entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727048;PONTENOVA (A); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727049;PORTOMARIN; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34122727050;QUIROGA; 68;Incidencia acumulada para o concello: >250
+23-01-2021;34122727051;RIBADEO; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34122727052;RIBAS DE SIL; 16;Incidencia acumulada para o concello: >250
+23-01-2021;34122727053;RIBEIRA DE PIQUIN;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727054;RIOTORTO; 12;Incidencia acumulada para o concello: >250
+23-01-2021;34122727055;SAMOS; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727056;RABADE; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727057;SARRIA; 134;Incidencia acumulada para o concello: >250
+23-01-2021;34122727058;SAVIÑAO (O); 22;Incidencia acumulada para o concello: >250
+23-01-2021;34122727059;SOBER; 10;Incidencia acumulada para o concello: >250
+23-01-2021;34122727060;TABOADA; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727061;TRABADA;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727062;TRIACASTELA;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34122727063;VALADOURO (O); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34122727064;VICEDO (O); 29;Incidencia acumulada para o concello: >250
+23-01-2021;34122727065;VILALBA; 104;Incidencia acumulada para o concello: >250
+23-01-2021;34122727066;VIVEIRO; 237;Incidencia acumulada para o concello: >250
+23-01-2021;34122727901;BARALLA; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34122727902;BURELA; 49;Incidencia acumulada para o concello: >250
+23-01-2021;34123232001;ALLARIZ; 118;Incidencia acumulada para o concello: >250
+23-01-2021;34123232002;AMOEIRO; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232003;ARNOIA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232004;AVION;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232005;BALTAR; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232006;BANDE; 38;Incidencia acumulada para o concello: >250
+23-01-2021;34123232007;BAÑOS DE MOLGAS; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232008;BARBADAS; 85;Incidencia acumulada para o concello: >250
+23-01-2021;34123232009;BARCO DE VALDEORRAS (O); 28;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232010;BEADE; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232011;BEARIZ; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232012;BLANCOS (OS); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232013;BOBORAS; 13;Incidencia acumulada para o concello: >250
+23-01-2021;34123232014;BOLA A; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232015;BOLO (O);0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232016;CALVOS DE RANDIN; 12;Incidencia acumulada para o concello: >250
+23-01-2021;34123232017;CARBALLEDA DE VALDEORRAS; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232018;CARBALLEDA DE AVIA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232019;CARBALLIÑO (O); 70;Incidencia acumulada para o concello: >250
+23-01-2021;34123232020;CARTELLE; 27;Incidencia acumulada para o concello: >250
+23-01-2021;34123232021;CASTRELO DO VAL; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232022;CASTRELO DE MIÑO; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232023;CASTRO CALDELAS; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232024;CELANOVA; 59;Incidencia acumulada para o concello: >250
+23-01-2021;34123232025;CENLLE; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232026;COLES; 42;Incidencia acumulada para o concello: >250
+23-01-2021;34123232027;CORTEGADA; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232028;CUALEDRO; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232029;CHANDREXA DE QUEIXA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232030;ENTRIMO;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232031;ESGOS; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232032;XINZO DE LIMIA; 242;Incidencia acumulada para o concello: >250
+23-01-2021;34123232033;GOMESENDE;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232034;GUDIÑA (A); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232035;IRIXO (O); entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232036;XUNQUEIRA DE AMBIA; 28;Incidencia acumulada para o concello: >250
+23-01-2021;34123232037;XUNQUEIRA DE ESPADANEDO;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232038;LAROUCO;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232039;LAZA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232040;LEIRO; 72;Incidencia acumulada para o concello: >250
+23-01-2021;34123232041;LOBEIRA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232042;LOBIOS; 23;Incidencia acumulada para o concello: >250
+23-01-2021;34123232043;MACEDA; 12;Incidencia acumulada para o concello: >250
+23-01-2021;34123232044;MANZANEDA; 11;Incidencia acumulada para o concello: >250
+23-01-2021;34123232045;MASIDE; 13;Incidencia acumulada para o concello: >250
+23-01-2021;34123232046;MELON; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232047;MERCA A; 16;Incidencia acumulada para o concello: >250
+23-01-2021;34123232048;MEZQUITA (A); entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232049;MONTEDERRAMO; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232050;MONTERREI; 33;Incidencia acumulada para o concello: >250
+23-01-2021;34123232051;MUIÑOS; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34123232052;NOGUEIRA DE RAMUIN; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232053;OIMBRA; 50;Incidencia acumulada para o concello: >250
+23-01-2021;34123232054;OURENSE; 861;Incidencia acumulada para o concello: >250
+23-01-2021;34123232055;PADERNE DE ALLARIZ; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232056;PADRENDA; 23;Incidencia acumulada para o concello: >250
+23-01-2021;34123232057;PARADA DE SIL;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232058;PEREIRO DE AGUIAR; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34123232059;PEROXA A; 22;Incidencia acumulada para o concello: >250
+23-01-2021;34123232060;PETIN; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232061;PIÑOR; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232062;PORQUEIRA; 24;Incidencia acumulada para o concello: >250
+23-01-2021;34123232063;POBRA DE TRIVES A; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232064;PONTEDEVA; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232065;PUNXIN;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232066;QUINTELA DE LEIRADO;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232067;RAIRIZ DE VEIGA; 16;Incidencia acumulada para o concello: >250
+23-01-2021;34123232068;RAMIRAS; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232069;RIBADAVIA; 52;Incidencia acumulada para o concello: >250
+23-01-2021;34123232070;SAN XOAN DE RIO; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232071;RIOS; 14;Incidencia acumulada para o concello: >250
+23-01-2021;34123232072;RUA (A); entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123232073;RUBIA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232074;SAN AMARO; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232075;SAN CIBRAO DAS VIÑAS; 20;Incidencia acumulada para o concello: >250
+23-01-2021;34123232076;SAN CRISTOVO DE CEA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232077;SANDIAS; 21;Incidencia acumulada para o concello: >250
+23-01-2021;34123232078;SARREAUS; 21;Incidencia acumulada para o concello: >250
+23-01-2021;34123232079;TABOADELA; 21;Incidencia acumulada para o concello: >250
+23-01-2021;34123232080;TEIXEIRA A;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123232081;TOEN; entre 1 e 9;Incidencia acumulada para o concello: >25 e <=50
+23-01-2021;34123232082;TRASMIRAS; 40;Incidencia acumulada para o concello: >250
+23-01-2021;34123232083;VEIGA (A); entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232084;VEREA; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232085;VERIN; 178;Incidencia acumulada para o concello: >250
+23-01-2021;34123232086;VIANA DO BOLO; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123232087;VILAMARIN; 12;Incidencia acumulada para o concello: >250
+23-01-2021;34123232088;VILAMARTIN DE VALDEORRAS; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232089;VILAR DE BARRIO; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123232090;VILAR DE SANTOS; 31;Incidencia acumulada para o concello: >250
+23-01-2021;34123232091;VILARDEVOS; 20;Incidencia acumulada para o concello: >250
+23-01-2021;34123232092;VILARIÑO DE CONSO;0;Incidencia acumulada para o concello: <=25
+23-01-2021;34123636001;ARBO; 43;Incidencia acumulada para o concello: >250
+23-01-2021;34123636002;BARRO; 17;Incidencia acumulada para o concello: >250
+23-01-2021;34123636003;BAIONA; 62;Incidencia acumulada para o concello: >250
+23-01-2021;34123636004;BUEU; 28;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123636005;CALDAS DE REIS; 61;Incidencia acumulada para o concello: >250
+23-01-2021;34123636006;CAMBADOS; 31;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123636007;CAMPO LAMEIRO; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123636008;CANGAS; 68;Incidencia acumulada para o concello: >250
+23-01-2021;34123636009;CAÑIZA (A); 125;Incidencia acumulada para o concello: >250
+23-01-2021;34123636010;CATOIRA; 28;Incidencia acumulada para o concello: >250
+23-01-2021;34123636013;COVELO (O); 40;Incidencia acumulada para o concello: >250
+23-01-2021;34123636014;CRECENTE; 48;Incidencia acumulada para o concello: >250
+23-01-2021;34123636015;CUNTIS; 35;Incidencia acumulada para o concello: >250
+23-01-2021;34123636016;DOZON; entre 1 e 9;Incidencia acumulada para o concello: >50 e <=150
+23-01-2021;34123636017;ESTRADA A; 115;Incidencia acumulada para o concello: >250
+23-01-2021;34123636018;FORCAREI; 71;Incidencia acumulada para o concello: >250
+23-01-2021;34123636019;FORNELOS DE MONTES; entre 1 e 9;Incidencia acumulada para o concello: >250
+23-01-2021;34123636020;AGOLADA; 18;Incidencia acumulada para o concello: >250
+23-01-2021;34123636021;GONDOMAR; 73;Incidencia acumulada para o concello: >250
+23-01-2021;34123636022;GROVE O; 21;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123636023;GUARDA (A); 42;Incidencia acumulada para o concello: >250
+23-01-2021;34123636024;LALIN; 60;Incidencia acumulada para o concello: >250
+23-01-2021;34123636025;LAMA A; 26;Incidencia acumulada para o concello: >250
+23-01-2021;34123636026;MARIN; 70;Incidencia acumulada para o concello: >250
+23-01-2021;34123636027;MEAÑO; 15;Incidencia acumulada para o concello: >250
+23-01-2021;34123636028;MEIS; 45;Incidencia acumulada para o concello: >250
+23-01-2021;34123636029;MOAÑA; 136;Incidencia acumulada para o concello: >250
+23-01-2021;34123636030;MONDARIZ; 72;Incidencia acumulada para o concello: >250
+23-01-2021;34123636031;MONDARIZ-BALNEARIO; 11;Incidencia acumulada para o concello: >250
+23-01-2021;34123636032;MORAÑA; 37;Incidencia acumulada para o concello: >250
+23-01-2021;34123636033;MOS; 74;Incidencia acumulada para o concello: >250
+23-01-2021;34123636034;NEVES (AS); 49;Incidencia acumulada para o concello: >250
+23-01-2021;34123636035;NIGRAN; 57;Incidencia acumulada para o concello: >250
+23-01-2021;34123636036;OIA; 38;Incidencia acumulada para o concello: >250
+23-01-2021;34123636037;PAZOS DE BORBEN; 30;Incidencia acumulada para o concello: >250
+23-01-2021;34123636038;PONTEVEDRA; 340;Incidencia acumulada para o concello: >250
+23-01-2021;34123636039;PORRIÑO (O); 100;Incidencia acumulada para o concello: >250
+23-01-2021;34123636040;PORTAS; 11;Incidencia acumulada para o concello: >250
+23-01-2021;34123636041;POIO; 304;Incidencia acumulada para o concello: >250
+23-01-2021;34123636042;PONTEAREAS; 247;Incidencia acumulada para o concello: >250
+23-01-2021;34123636043;PONTE-CALDELAS; 24;Incidencia acumulada para o concello: >250
+23-01-2021;34123636044;PONTECESURES; 68;Incidencia acumulada para o concello: >250
+23-01-2021;34123636045;REDONDELA; 162;Incidencia acumulada para o concello: >250
+23-01-2021;34123636046;RIBADUMIA; 11;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123636047;RODEIRO; entre 1 e 9;Incidencia acumulada para o concello: >150 e <=250
+23-01-2021;34123636048;ROSAL (O); 53;Incidencia acumulada para o concello: >250
+23-01-2021;34123636049;SALCEDA DE CASELAS; 76;Incidencia acumulada para o concello: >250
+23-01-2021;34123636050;SALVATERRA DE MIÑO; 116;Incidencia acumulada para o concello: >250
+23-01-2021;34123636051;SANXENXO; 95;Incidencia acumulada para o concello: >250
+23-01-2021;34123636052;SILLEDA; 96;Incidencia acumulada para o concello: >250
+23-01-2021;34123636053;SOUTOMAIOR; 48;Incidencia acumulada para o concello: >250
+23-01-2021;34123636054;TOMIÑO; 151;Incidencia acumulada para o concello: >250
+23-01-2021;34123636055;TUI; 151;Incidencia acumulada para o concello: >250
+23-01-2021;34123636056;VALGA; 126;Incidencia acumulada para o concello: >250
+23-01-2021;34123636057;VIGO; 1301;Incidencia acumulada para o concello: >250
+23-01-2021;34123636058;VILABOA; 19;Incidencia acumulada para o concello: >250
+23-01-2021;34123636059;VILA DE CRUCES; 41;Incidencia acumulada para o concello: >250
+23-01-2021;34123636060;VILAGARCIA DE AROUSA; 131;Incidencia acumulada para o concello: >250
+23-01-2021;34123636061;VILANOVA DE AROUSA; 41;Incidencia acumulada para o concello: >250
+23-01-2021;34123636901;ILLA DE AROUSA; 19;Incidencia acumulada para o concello: >250
+23-01-2021;34123636902;CERDEDO-COTOBADE; 10;Incidencia acumulada para o concello: >150 e <=250
