@@ -110,7 +110,12 @@ done
 # Para cargarse la última línea del fichero: sed \$d
 
 
-cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' |awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello"," :0",$0); l=split($0,datos,",");l=split(datos[3],novos,":"); if (l>=2) { print fecha";"datos[1]";"datos[2]";"novos[2]";"datos[4]} else { print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]}}' | sed \$d  > ${CARPETA}/${HOY}_incidencia_concello.csv
+#  El día 02/03 empiezan a publicar datos de IA7 
+#cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' |awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello"," :0",$0); l=split($0,datos,",");l=split(datos[3],novos,":"); if (l>=2) { print fecha";"datos[1]";"datos[2]";"novos[2]";"datos[4]} else { print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]}}' | sed \$d  > ${CARPETA}/${HOY}_incidencia_concello.csv
+
+
+
+cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' |  sed 's/;0;/;/g' | awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello","0",$0); l=split($0,datos,";"); if (datos[1]=="ID") { print "Fecha";"$0} else { print fecha";"$0}}'  > ${CARPETA}/${HOY}_incidencia_concello.csv
 
 #
 # Se añade el fichero al acumulado

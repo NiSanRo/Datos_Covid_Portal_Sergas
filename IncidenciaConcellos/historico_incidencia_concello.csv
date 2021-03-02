@@ -1,4 +1,4 @@
-Fecha;ID;NOME;CASOS;NIVEL
+Fecha;ID;COR;NOME;CASOS_14_DIAS;NIVEL_14_DIAS;CASOS_7_DIAS;NIVEL_7_DIAS
 22-11-2020;34121515001;ABEGONDO; 11;Incidencia acumulada para o concello: >150 e <=250
 22-11-2020;34121515002;AMES; 33;Incidencia acumulada para o concello: >50 e <=150
 22-11-2020;34121515003;ARANGA; entre 1 e 9;Incidencia acumulada para o concello: >250
