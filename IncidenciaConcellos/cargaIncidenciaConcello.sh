@@ -115,7 +115,7 @@ done
 
 
 
-cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' |  sed 's/;0;/;/g' | awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello","0",$0); l=split($0,datos,";"); if (datos[1]=="ID") { print "Fecha";"$0} else { print fecha";"$0}}'  > ${CARPETA}/${HOY}_incidencia_concello.csv
+cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' |  sed 's/;0;/;/g' | awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello","0",$0); l=split($0,datos,";"); if (datos[1]=="ID") { print "Fecha;"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7] } else { l=split(datos[3],casos14,":"); if (l==2) {nuevos14=casos14[2]} else {nuevos14=casos14[1]}; l=split(datos[5],casos7,":"); if (l==2) {nuevos7=casos7[2]} else {nuevos7=casos7[1]}; print fecha";"datos[1]";"datos[2]";"nuevos14";"datos[4]";"nuevos7";"datos[6];}}'  > ${CARPETA}/${HOY}_incidencia_concello.csv
 
 #
 # Se añade el fichero al acumulado
@@ -126,12 +126,14 @@ cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' |
 
 # Se concatena el nuevo fichero en el historico
 
+
 awk 'FNR==1 && NR!=1 { while (/^Fecha;/) getline; } 1 {print} ' ${CARPETA}/historico_incidencia_concello.csv ${CARPETA}/${HOY}_incidencia_concello.csv > ${CARPETA}/prov.csv
 mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
 
 
 # Se borran los ficheros html del mapa
 # rm ${CARPETA}/${HOY}_mapa-covid.html
+ 
  
  
 # Subida automatica Github
