@@ -113,9 +113,25 @@ done
 #  El día 02/03 empiezan a publicar datos de IA7 
 #cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' |awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello"," :0",$0); l=split($0,datos,",");l=split(datos[3],novos,":"); if (l>=2) { print fecha";"datos[1]";"datos[2]";"novos[2]";"datos[4]} else { print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]}}' | sed \$d  > ${CARPETA}/${HOY}_incidencia_concello.csv
 
+#  El día 02/03 empiezan a publicar datos de IA7 
+# Para los nuevos casos "entre 1 y 9" se pone 5
+cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' |
+sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' | sed 's/,/;/g' | 
+sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos casos diagnosticados no concello: entre 1 e 9/5/g'> ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 
+# Ponemos la fecha a todas las lineas excepto la cabecera, ademas eliminamos la ultima linea
+head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} '{
+    l=split($0,datos,";"); 
+    if (datos[1]=="ID") { 
+            print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+        } 
+        else { 
+            print fecha";"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+        }
+    }' > ${CARPETA}/${HOY}_incidencia_concello.csv
 
-cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' |  sed 's/;0;/;/g' | awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello","0",$0); l=split($0,datos,";"); if (datos[1]=="ID") { print "Fecha;"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7] } else { l=split(datos[3],casos14,":"); if (l==2) {nuevos14=casos14[2]} else {nuevos14=casos14[1]}; l=split(datos[5],casos7,":"); if (l==2) {nuevos7=casos7[2]} else {nuevos7=casos7[1]}; print fecha";"datos[1]";"datos[2]";"nuevos14";"datos[4]";"nuevos7";"datos[6];}}'  > ${CARPETA}/${HOY}_incidencia_concello.csv
+rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv 
+
 
 #
 # Se añade el fichero al acumulado
@@ -139,6 +155,10 @@ mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
 # Subida automatica Github
 
 cd ${CARPETA}
+
+
+# Para evitar  subidas a Github comentar la siguiente linea
+
 
 # GIT: Anhadir todos los nuevos ficheros en local
 # a: anhadir
