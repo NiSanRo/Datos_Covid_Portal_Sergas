@@ -120,29 +120,29 @@ sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\./
 sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos casos diagnosticados no concello: entre 1 e 9/5/g'> ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 
 # Ponemos la fecha a todas las lineas excepto la cabecera, ademas eliminamos la ultima linea
-head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} '{
+# estan cambiando continuamente el formato de los datos, bailando una columna COR
+# en caso de que apararezca como segunda columna, hay que pasar de ella
+COR=$(head -1 20210311_incidencia_concello_tmp.csv | awk '{l=split($0,datos,";"); print datos[2];}')
+head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} -v formato=${COR} '{
     l=split($0,datos,";"); 
-	formato=1
-    if (datos[1]=="ID") { 
-			if (datos[2]=="COR") { 
-				formato=2
-			}
-			if (formato==1){ 
-            	print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+    if (datos[1]=="ID") {
+			if (formato=="COR"){ 
+            	print "Fecha;"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7];
 			}
 			else {
-				print "Fecha;"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7];
+				print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
 			}
         } 
         else { 
-			if (formato==1) {
-            	print fecha";"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+			if (formato=="COR") {
+            	print fecha";"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7];
 			} 
 			else {
-				print fecha";"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7];
+				print fecha";"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
 			}
         }
     }' > ${CARPETA}/${HOY}_incidencia_concello.csv
+
 
 rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv 
 
@@ -155,7 +155,6 @@ rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 
 
 # Se concatena el nuevo fichero en el historico
-
 
 awk 'FNR==1 && NR!=1 { while (/^Fecha;/) getline; } 1 {print} ' ${CARPETA}/historico_incidencia_concello.csv ${CARPETA}/${HOY}_incidencia_concello.csv > ${CARPETA}/prov.csv
 mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
