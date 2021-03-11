@@ -1,4 +1,4 @@
-Fecha;ID;COR;NOME;CASOS_14_DIAS;NIVEL_14_DIAS;CASOS_7_DIAS
+Fecha;ID;NOME;CASOS_14_DIAS;NIVEL_14_DIAS;CASOS_7_DIAS;NIVEL_7_DIAS
 10-03-2021;34121515001;0;ABEGONDO;5;Incidencia acumulada para o concello: <=25;5
 10-03-2021;34121515002;0;AMES;Número de novos casos diagnosticados no concello: 32;Incidencia acumulada para o concello: >50 e <=150;Número de novos casos diagnosticados no concello: 17
 10-03-2021;34121515003;0;ARANGA;5;Incidencia acumulada para o concello: >150 e <=250;0

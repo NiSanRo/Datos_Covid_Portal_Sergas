@@ -122,11 +122,25 @@ sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos
 # Ponemos la fecha a todas las lineas excepto la cabecera, ademas eliminamos la ultima linea
 head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} '{
     l=split($0,datos,";"); 
+	formato=1
     if (datos[1]=="ID") { 
-            print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+			if (datos[2]=="COR") { 
+				formato=2
+			}
+			if (formato==1){ 
+            	print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+			}
+			else {
+				print "Fecha;"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7];
+			}
         } 
         else { 
-            print fecha";"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+			if (formato==1) {
+            	print fecha";"datos[1]";"datos[2]";"datos[3]";"datos[4]";"datos[5]";"datos[6];
+			} 
+			else {
+				print fecha";"datos[1]";"datos[3]";"datos[4]";"datos[5]";"datos[6]";"datos[7];
+			}
         }
     }' > ${CARPETA}/${HOY}_incidencia_concello.csv
 
