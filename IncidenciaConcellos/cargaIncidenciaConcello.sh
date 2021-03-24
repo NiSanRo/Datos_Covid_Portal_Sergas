@@ -184,3 +184,8 @@ git commit -a -m "Nuevos ficheros datos incidencia ${AYER}"
 
 # Ahora se realiza el push al main de Github NiSanRo
 git push origin main
+
+
+# Finalmente descargamos los datos de COVID-BENS
+
+/mnt/c/PERSONALES/Coronavirus/sources/COVID-BENS/cargaIncidenciaBens.sh
