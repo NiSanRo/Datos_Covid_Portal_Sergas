@@ -20,8 +20,11 @@ ULTIMA_FECHA=`tail -1 ${CARPETA}/historico_incidencia_concello.csv |awk '{l=spli
 # un comando sed para invertir las cadenas y que tengan formato %Y-%m-%d que si se admite
 # Ejemplo:  date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<<"27-11-2020")
 # Check: echo ` date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) `
-DIAS=$(( (`date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${AYER}) +"%s"`-`date -d date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) "+%s"`)/86400 ))
-
+# Un dia son 86400 segundos, pero con el cambio de hora se convierten en 82800
+DIAS=$(( (`date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${AYER}) +"%s"`-`date -d date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) "+%s"`)/82800 ))
+#ARRIBA=$(date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< "${AYER}") +"%s")
+#ABAJO=$(date -d date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) "+%s")
+#DIAS=$(( (ARRIBA-ABAJO)/82800 ))   #Un dia son 86400 segundos, pero con el cambio de hora se convierten en 82800
 echo "Descarga de incidencias acumuladas por Concello para el dia: ${AYER}"
 echo "Ultima fecha cargada: ${ULTIMA_FECHA}"
 echo "Diferencia de dias: " ${DIAS} 
