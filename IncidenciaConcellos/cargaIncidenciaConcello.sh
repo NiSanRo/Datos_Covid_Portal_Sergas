@@ -125,7 +125,7 @@ sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos
 # Ponemos la fecha a todas las lineas excepto la cabecera, ademas eliminamos la ultima linea
 # estan cambiando continuamente el formato de los datos, bailando una columna COR
 # en caso de que apararezca como segunda columna, hay que pasar de ella
-COR=$(head -1 20210311_incidencia_concello_tmp.csv | awk '{l=split($0,datos,";"); print datos[2];}')
+COR=$(head -1  ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk '{l=split($0,datos,";"); print datos[2];}')
 head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} -v formato=${COR} '{
     l=split($0,datos,";"); 
     if (datos[1]=="ID") {
