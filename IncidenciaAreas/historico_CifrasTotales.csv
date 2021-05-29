@@ -1,4 +1,4 @@
-Fecha,Area_Sanitaria,Casos_Totais,Casos_Confirmados_PCR_Ultimas24h,Pacientes_Sin_Alta,Pacientes_Con_Alta,Camas_Ocupadas_HOS,Camas_Ocupadas_UCI,Probas_Realizadas_PCR,Probas_Realizadas_Non_PCR,Exitus
+Fecha,Area_Sanitaria,Casos_Totais,Casos_Confirmados_PCR_Ultimas24h,Pacientes_Sin_Alta,Pacientes_Con_Alta,Camas_Ocupadas_HOS,Camas_Ocupadas_UCI,Probas_Realizadas_PCR,Probas_Realizadas_Non_PCR,Exitus,Probas_Antixenos_Realizadas
 2020-10-07 18:00:00,"A.S. A CORUÑA E CEE","6.973","42","785","5.983","45","4","129.001","54.017","205"
 2020-10-07 18:00:00,"A.S. FERROL","1.133","7","102","997","3","0","36.466","24.315","34"
 2020-10-07 18:00:00,"A.S. LUGO, A MARIÑA E MONFORTE","3.301","34","483","2.727","24","5","63.536","59.414","91"
