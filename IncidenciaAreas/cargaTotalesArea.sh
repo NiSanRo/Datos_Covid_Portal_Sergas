@@ -32,12 +32,11 @@ echo "Diferencia de dias: " ${DIAS}
 # Vamos descargar el fichero de configuracion
 #wget -O ${CARPETA}/sergasConfig.html https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt
 
-wget -O ${CARPETA}/hot-config.txt ${CARPETA}/sergasConfig.html https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt
-
+wget -O ${CARPETA}/hot-config.txt https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt
 
 # Dato diario de: pacientes con infeccion activa, hospitalizados hoxe, coidados intensivos hoxe, curados, falecidos, contaxiados, confirmados PCR 24 horas, pruebas PCR, prueba serologica
 # Es un fichero incremental, se concatena al historico
-SUFIJO=$(cat hot-config.txt  |grep CifrasTotais | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
+SUFIJO=$(cat ${CARPETA}/hot-config.txt  |grep CifrasTotais | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
 echo "Se cargan datos de: https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}"
 # wget -O ${CARPETA}/${AYER_DEC}_CifrasTotales.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}_COVID19_Web_CifrasTotais.csv
 wget -O ${CARPETA}/${AYER_DEC}_CifrasTotales.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}
@@ -47,21 +46,21 @@ mv ${CARPETA}/prov.csv ${CARPETA}/historico_CifrasTotales.csv
 
 # Dato acumulado de infectados por fecha y area sanitaria
 # Al tratarse de un fichero acumulado, el último descargado introduce cambios en cualquier fecha anterior
-SUFIJO=$(cat hot-config.txt  |grep InfectadosPorFecha | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
+SUFIJO=$(cat ${CARPETA}/hot-config.txt  |grep InfectadosPorFecha | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
 echo "Se cargan datos de: https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}"
 wget -O ${CARPETA}/${AYER_DEC}_InfectadosArea.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}
 cp ${CARPETA}/${AYER_DEC}_InfectadosArea.csv ${CARPETA}/historico_InfectadosArea.csv 
 
 # Dato acumulado de positividades por fecha y area sanitaria
 # Al tratarse de un fichero acumulado, el último descargado introduce cambios en cualquier fecha anterior
-SUFIJO=$(cat hot-config.txt  |grep PorcentajeInfecciones | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
+SUFIJO=$(cat ${CARPETA}/hot-config.txt  |grep PorcentajeInfecciones | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
 echo "Se cargan datos de: https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}"
 wget -O ${CARPETA}/${AYER_DEC}_PositividadArea.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}
 cp ${CARPETA}/${AYER_DEC}_PositividadArea.csv ${CARPETA}/historico_positividadArea.csv 
 
 # Dato diario de situación de hospitales
 # Es un fichero incremental, se concatena al historico
-SUFIJO=$(cat hot-config.txt  |grep OcupacionCamas | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
+SUFIJO=$(cat ${CARPETA}/hot-config.txt  |grep OcupacionCamas | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
 echo "Se cargan datos de: https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}"
 wget -O ${CARPETA}/${AYER_DEC}_SituacionHospitales.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}
 { head -1 ${CARPETA}/historico_SituacionHospitales.csv; { tail -n+2  ${CARPETA}/historico_SituacionHospitales.csv; tail -n+2 ${CARPETA}/${AYER_DEC}_SituacionHospitales.csv; } | sort -u;} > ${CARPETA}/prov.csv
