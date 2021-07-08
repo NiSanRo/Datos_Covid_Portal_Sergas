@@ -73,7 +73,7 @@ mv ${CARPETA}/prov.csv ${CARPETA}/historico_SituacionHospitales.csv
 # Se borra el fichero temporal
 rm ${CARPETA}/prov.csv
 
-exit
+
  
 # Subida automatica Github
 

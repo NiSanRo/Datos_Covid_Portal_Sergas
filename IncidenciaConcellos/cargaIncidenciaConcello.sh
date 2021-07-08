@@ -26,6 +26,8 @@ DIAS=$(( (`date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${AYER}) +"%s"`-`d
 #ABAJO=$(date -d date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) "+%s")
 #DIAS=$(( (ARRIBA-ABAJO)/82800 ))   #Un dia son 86400 segundos, pero con el cambio de hora se convierten en 82800
 echo "Descarga de incidencias acumuladas por Concello para el dia: ${AYER}"
+echo "HOY: ${HOY}"
+echo "AYER: ${AYER}"
 echo "Ultima fecha cargada: ${ULTIMA_FECHA}"
 echo "Diferencia de dias: " ${DIAS} 
 
@@ -36,6 +38,10 @@ then
 	echo "Ya estan cargados los datos mas actualizados"
 	exit
 fi
+
+#HOY='20210707'
+#AYER='20210707'
+
 
 
 # La URL para descargar el mapa tiene formato:
@@ -49,7 +55,7 @@ fi
 #   }
 
 # 1.- Descargar el fichero de configuracion del Sergas
-wget -O ${CARPETA}/sergasConfig.html https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt
+wget -O ${CARPETA}/sergasConfig.html https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt --no-check-certificate
 
 
 # 2.- Filtramos la linea con CASE_MAP para obtener el Id del Mapa
@@ -66,7 +72,7 @@ echo "Identificador del fichero datos/redireccion: ${IDENTIFICADOR}"
 
 # 3.- Se descarga el fichero de datos/redireccion
 
- wget -O ${CARPETA}/${HOY}_mapa-covid.html https://datawrapper.dwcdn.net/${IDENTIFICADOR}/1/
+ wget -O ${CARPETA}/${HOY}_mapa-covid.html https://datawrapper.dwcdn.net/${IDENTIFICADOR}/1/   --no-check-certificate
 
 
 # En el caso de contener una redireccion o otra pagina y no los datos directos, el fichero
@@ -95,7 +101,7 @@ while [ -n "${nuevoFichero}" ]
 do 
 	echo "Redireccion..."
 	echo "Se descarga el fichero de datos: ${nuevoFichero}"
-	wget -O ${CARPETA}/${HOY}_mapa-covid.html ${nuevoFichero}
+	wget -O ${CARPETA}/${HOY}_mapa-covid.html ${nuevoFichero}  --no-check-certificate
 	nuevoFichero=`cat  ${CARPETA}/${HOY}_mapa-covid.html | grep REFRESH |  awk '{l=split($0,datos,"\"");l=split(datos[4],url,"=");print url[2];}'`
 	echo ${nuevoFichero}
 done 
