@@ -3963,6 +3963,7 @@ Fecha,Area_Sanitaria,Casos_Abiertos,Pruebas_PCR_Realizadas,Porcentaje_Infeccione
 2021-07-06,"A.S. SANTIAGO E BARBANZA","18","477","3,77%"
 2021-07-06,"A.S. VIGO","92","894","10,29%"
 2021-07-06,"GALICIA","263","5.110","5,15%"
+<<<<<<< HEAD
 2021-07-07,"A.S. A CORUÑA E CEE","55","1.136","4,84%"
 2021-07-07,"A.S. FERROL","16","322","4,97%"
 2021-07-07,"A.S. LUGO, A MARIÑA E MONFORTE","47","585","8,03%"
@@ -3979,3 +3980,13 @@ Fecha,Area_Sanitaria,Casos_Abiertos,Pruebas_PCR_Realizadas,Porcentaje_Infeccione
 2021-07-08,"A.S. SANTIAGO E BARBANZA","35","513","6,82%"
 2021-07-08,"A.S. VIGO","73","773","9,44%"
 2021-07-08,"GALICIA","219","3.354","6,53%"
+=======
+2021-07-07,"A.S. A CORUÑA E CEE","39","586","6,66%"
+2021-07-07,"A.S. FERROL","9","139","6,47%"
+2021-07-07,"A.S. LUGO, A MARIÑA E MONFORTE","18","189","9,52%"
+2021-07-07,"A.S. OURENSE, VERÍN E O BARCO","24","251","9,56%"
+2021-07-07,"A.S. PONTEVEDRA E O SALNÉS","20","502","3,98%"
+2021-07-07,"A.S. SANTIAGO E BARBANZA","23","299","7,69%"
+2021-07-07,"A.S. VIGO","28","802","3,49%"
+2021-07-07,"GALICIA","161","2.768","5,82%"
+>>>>>>> d73f4f32edb38d3ca2b72344e12b33111dee5f4b
