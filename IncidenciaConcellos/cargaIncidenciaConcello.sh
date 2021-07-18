@@ -75,6 +75,7 @@ echo "Identificador del fichero datos/redireccion: ${IDENTIFICADOR}"
  wget -O ${CARPETA}/${HOY}_mapa-covid.html https://datawrapper.dwcdn.net/${IDENTIFICADOR}/1/   --no-check-certificate
 
 
+
 # En el caso de contener una redireccion o otra pagina y no los datos directos, el fichero
 # contendra una linea del estilo de:
 # <html><head><meta http-equiv="REFRESH" content="0; url=https://datawrapper.dwcdn.net/jKpTc/5/"></head></html>
@@ -116,7 +117,7 @@ done
 # "34121515001\\\",\\\"ABEGONDO\\\",\\\"N\u00FAmero de novos casos diagnosticados no concello: 11.\\\",\\\"Incidencia acumulada para o concello: >150 e \u2264250.\\\",\\\"0\\\"\\r\\n\\\
 #
 
-# Para cargarse la última línea del fichero: sed \$d
+# Para cargarse la última línea del fichero: s${CARPETA}/${HOY}_incidencia_concello_tmp.csved \$d
 
 
 #  El día 02/03 empiezan a publicar datos de IA7 
@@ -124,9 +125,8 @@ done
 
 #  El día 02/03 empiezan a publicar datos de IA7 
 # Para los nuevos casos "entre 1 y 9" se pone 5
-cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' |
-sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' | sed 's/,/;/g' | 
-sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos casos diagnosticados no concello: entre 1 e 9/5/g'> ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
+
+cat ${CARPETA}/${HOY}_mapa-covid.html | grep 'CASOS_14_DIAS' | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' | sed 's/,/;/g' | sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos casos diagnosticados no concello: entre 1 e 9/5/g' | head -315 |sed 's/<\/div><script>window__DW_SVELTE_PROPS__ = JSONparse("{\\"dataID/IDENTIFICADOR/g' | sed '1,1d' > ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 
 # Ponemos la fecha a todas las lineas excepto la cabecera, ademas eliminamos la ultima linea
 # estan cambiando continuamente el formato de los datos, bailando una columna COR
@@ -156,7 +156,7 @@ head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} 
 rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv 
 
 
-#
+
 # Se añade el fichero al acumulado
 #
 
@@ -166,7 +166,10 @@ rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 # Se concatena el nuevo fichero en el historico
 
 awk 'FNR==1 && NR!=1 { while (/^Fecha;/) getline; } 1 {print} ' ${CARPETA}/historico_incidencia_concello.csv ${CARPETA}/${HOY}_incidencia_concello.csv > ${CARPETA}/prov.csv
+
+
 mv ${CARPETA}/prov.csv ${CARPETA}/historico_incidencia_concello.csv
+
 
 
 # Se borran los ficheros html del mapa
@@ -179,6 +182,7 @@ rm ${CARPETA}/${HOY}_mapa-covid.html
 cd ${CARPETA}
 
 
+
 # Para evitar  subidas a Github comentar la siguiente linea
 
 
@@ -186,15 +190,18 @@ cd ${CARPETA}
 # a: anhadir
 # *: todos
 # q: salir
-echo  -e "a\n*\nq\n" | git add -i
+#echo  -e "a\n*\nq\n" | git add -i
 
 # Ahora se hace el commit
-git commit -a -m "Nuevos ficheros datos incidencia ${AYER}" 
+#git commit -a -m "Nuevos ficheros datos incidencia ${AYER}" 
 
 # Ahora se realiza el push al main de Github NiSanRo
-git push origin main
+#git push origin main
 
 
 # Finalmente descargamos los datos de COVID-BENS
 
-/mnt/c/PERSONALES/Coronavirus/sources/COVID-BENS/cargaIncidenciaBens.sh
+#/mnt/c/PERSONALES/Coronavirus/sources/COVID-BENS/cargaIncidenciaBens.sh
+
+# Para chequear la carga
+ tail  -10  ${CARPETA}/historico_incidencia_concello.csv 
