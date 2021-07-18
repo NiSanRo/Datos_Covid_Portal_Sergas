@@ -34,6 +34,5 @@ echo  -e "a\n*\nq\n" | git add -i
 git commit -a -m "Nuevos ficheros datos incidencia ${AYER}" 
 
 # Ahora se realiza el push al main de Github NiSanRo
-git push origin main
-
+git push https://NiSanRo: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@github.com/NiSanro/Datos_Covid_Portal_Sergas.git
 
