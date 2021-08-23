@@ -33,11 +33,13 @@ echo "Diferencia de dias: " ${DIAS}
 #wget -O ${CARPETA}/sergasConfig.html https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt
 
 wget -O ${CARPETA}/hot-config.txt https://coronavirus.sergas.es/datos/libs/hot-config/hot-config.txt --no-check-certificate
-
+ 
 # Dato diario de: pacientes con infeccion activa, hospitalizados hoxe, coidados intensivos hoxe, curados, falecidos, contaxiados, confirmados PCR 24 horas, pruebas PCR, prueba serologica
 # Es un fichero incremental, se concatena al historico
 SUFIJO=$(cat ${CARPETA}/hot-config.txt  |grep CifrasTotais | grep URL | awk '{l=split($0,datos,"}");print datos[2];}' | sed 's/",//g')
+AYER_DEC="2021-08-21"
 echo "Se cargan datos de: https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO}"
+
 # wget -O ${CARPETA}/${AYER_DEC}_CifrasTotales.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}_COVID19_Web_CifrasTotais.csv
 wget -O ${CARPETA}/${AYER_DEC}_CifrasTotales.csv https://coronavirus.sergas.gal/infodatos/${AYER_DEC}${SUFIJO} --no-check-certificate
 { head -1 ${CARPETA}/historico_CifrasTotales.csv; { tail -n+2  ${CARPETA}/historico_CifrasTotales.csv; tail -n+2 ${CARPETA}/${AYER_DEC}_CifrasTotales.csv; } | sort -u;} > ${CARPETA}/prov.csv
