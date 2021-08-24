@@ -83,6 +83,7 @@ echo "Identificador del fichero datos/redireccion: ${IDENTIFICADOR}"
 #     no se trata de la redireccion esperada
 
 nuevoFichero=`cat  ${CARPETA}/${HOY}_mapa-covid.html | grep REFRESH |  awk '{l=split($0,datos,"\"");l=split(datos[4],url,"=");print url[2];}'`
+
 # 20/12/2020: Se detectan dos redirecciones en los ficheros html
 # Cuando la cadena sea nula (no hay REFRESH) se para la ejecucion del bucle
 #  -z: la cadena es nula
@@ -95,42 +96,44 @@ nuevoFichero=`cat  ${CARPETA}/${HOY}_mapa-covid.html | grep REFRESH |  awk '{l=s
 #	wget -O ${CARPETA}/${HOY}_mapa-covid.html ${nuevoFichero}
 #fi
 
+NUMERO=$(echo ${nuevoFichero} | awk '{n=split($0,datos,"/");print datos[n-1];}')
+
 
 while [ -n "${nuevoFichero}" ]
 do 
-	echo "Redireccion..."
+	NUMERO=$(echo ${nuevoFichero} | awk '{n=split($0,datos,"/");print datos[n-1];}')
+	echo "ID CARPETA REDIRECCION: ${IDENTIFICADOR}/${NUMERO}/"
 	echo "Se descarga el fichero de datos: ${nuevoFichero}"
 	wget -O ${CARPETA}/${HOY}_mapa-covid.html ${nuevoFichero}  --no-check-certificate
 	nuevoFichero=`cat  ${CARPETA}/${HOY}_mapa-covid.html | grep REFRESH |  awk '{l=split($0,datos,"\"");l=split(datos[4],url,"=");print url[2];}'`
-	echo ${nuevoFichero}
 done 
-exit
-# 
-# Ahora estamos seguros de tener el fichero ${HOY}_mapa-covid.html los datos de incidencia acumulada por Concello
-# 
-# \"MapAttribution\"}]}]},\"chartData\":\"ID,NOME,CASOS,NIVEL,COR\\r\\n\\\"34121515001\\\",\\\"ABEGONDO\\\",\\\"N\u00FAmero de novos casos diagnosticados no concello: 11.\\\",\\\"Incidencia acumulada para o concello: >150 e \u2264250.\\\",\\\"0\\\"\\r\\n\\\"34121515002\\\",\\\"AMES\\\",\\\"N\u00FAmero de novos casos diagnosticados no concello: 33.\\\",\\\"Incidencia acumulada para o concello: >50 e \u2264150.\\\",\\\"0\\\"\\r\\n\\\"34121515003\\\",\\\"ARANGA\\\",\\\"N\u00FAmero de novos casos diagnosticados no concello: entre 1 e 9.\\\",\\\"Incidencia acumulada para o concello: >250.\\\",\\\"0\\\"\\r\\n\\\"34121515004\\\",\\\"ARES\\\",\\\"N\u00FAmero de novos casos diagnosticados no concello: 15.\\\",\\\"Incidencia acumulada para o concello: >250.\\\"
-# 
-# Los datos de los concellos empiezan despues de la cadena "chartData" y tienen el formato
-# "ID,NOMBRE CONCELLO, CASOS, IA
-# "34121515001\\\",\\\"ABEGONDO\\\",\\\"N\u00FAmero de novos casos diagnosticados no concello: 11.\\\",\\\"Incidencia acumulada para o concello: >150 e \u2264250.\\\",\\\"0\\\"\\r\\n\\\
-#
 
-# Para cargarse la última línea del fichero: s${CARPETA}/${HOY}_incidencia_concello_tmp.csved \$d
+datasetFich="https://datawrapper.dwcdn.net/${IDENTIFICADOR}/${NUMERO}/dataset.csv"
+
+echo ""
+echo ""
+echo "FICHERO DE DATOS: ${datasetFich}"
+echo ""
+echo ""
+
+wget -O ${CARPETA}/${HOY}_incidencia_concello_tmp.csv ${datasetFich} --no-check-certificate
+# Se normaliza el separador de columnas
+sed -i 's/,/;/g' ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
+sed -i 's/"//g' ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
+sed -i 's/\.;/;/g' ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
+sed -i 's/Sen novos casos diagnosticados no concello/0/g' ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
+sed -i 's/Número de novos casos diagnosticados no concello: entre 1 e 9/5/g' ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 
 
-#  El día 02/03 empiezan a publicar datos de IA7 
-#cat ${CARPETA}/${HOY}_mapa-covid.html | grep chartData | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' |awk -v fecha=${AYER} '{gsub("Sen novos casos diagnosticados no concello"," :0",$0); l=split($0,datos,",");l=split(datos[3],novos,":"); if (l>=2) { print fecha";"datos[1]";"datos[2]";"novos[2]";"datos[4]} else { print "Fecha;"datos[1]";"datos[2]";"datos[3]";"datos[4]}}' | sed \$d  > ${CARPETA}/${HOY}_incidencia_concello.csv
-
-#  El día 02/03 empiezan a publicar datos de IA7 
-# Para los nuevos casos "entre 1 y 9" se pone 5
-
-cat ${CARPETA}/${HOY}_mapa-covid.html | grep 'CASOS_14_DIAS' | sed 's/.*chartData//' | sed 's/isPreview.*//' | sed 's/\\\\r\\\\n/\n/g' | sed 's/\\\\\\\"//g' | sed 's/\\":\\"//g' | sed 's/\\u2264/<=/g' | sed 's/\\\u00D1/Ñ/g' | sed 's/\\u00FA/ú/g' | sed 's/\.//g' | sed 's/\\\\n/\n/g' | sed 's/\\",\\"//g' | sed 's/,/;/g' | sed 's/Sen novos casos diagnosticados no concello/0/g' | sed 's/Número de novos casos diagnosticados no concello: entre 1 e 9/5/g' | head -315 |sed 's/<\/div><script>window__DW_SVELTE_PROPS__ = JSONparse("{\\"dataID/IDENTIFICADOR/g' | sed '1,1d' > ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 
 # Ponemos la fecha a todas las lineas excepto la cabecera, ademas eliminamos la ultima linea
 # estan cambiando continuamente el formato de los datos, bailando una columna COR
 # en caso de que apararezca como segunda columna, hay que pasar de ella
 COR=$(head -1  ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk '{l=split($0,datos,";"); print datos[2];}')
-head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} -v formato=${COR} '{
+#head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} -v formato=${COR} '{
+# Para cargarse la primera línea del fichero:  tail -n+2
+
+tail -n+2 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} -v formato=${COR} '{
     l=split($0,datos,";"); 
     if (datos[1]=="ID") {
 			if (formato=="COR"){ 
@@ -150,7 +153,6 @@ head -n -1 ${CARPETA}/${HOY}_incidencia_concello_tmp.csv | awk -v fecha=${AYER} 
         }
     }' > ${CARPETA}/${HOY}_incidencia_concello.csv
 
-
 rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv 
 
 
@@ -158,7 +160,6 @@ rm ${CARPETA}/${HOY}_incidencia_concello_tmp.csv
 # Se añade el fichero al acumulado
 #
 
-# Para cargarse la primera línea del fichero:  tail -n+2
 
 
 # Se concatena el nuevo fichero en el historico
