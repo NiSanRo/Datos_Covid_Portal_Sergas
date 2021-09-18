@@ -25,6 +25,11 @@ DIAS=$(( (`date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${AYER}) +"%s"`-`d
 #ARRIBA=$(date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< "${AYER}") +"%s")
 #ABAJO=$(date -d date -d $(sed -E "s/(..)-(..)-(....)/\3\2\1/g" <<< ${ULTIMA_FECHA}) "+%s")
 #DIAS=$(( (ARRIBA-ABAJO)/82800 ))   #Un dia son 86400 segundos, pero con el cambio de hora se convierten en 82800
+
+HOY="20210918"
+AYER="20210917"
+DIAS="1"
+
 echo "Descarga de incidencias acumuladas por Concello para el dia: ${AYER}"
 echo "HOY: ${HOY}"
 echo "AYER: ${AYER}"
@@ -38,9 +43,6 @@ then
 	echo "Ya estan cargados los datos mas actualizados"
 	exit
 fi
-
-#HOY='20210707'
-#AYER='20210707'
 
 
 
