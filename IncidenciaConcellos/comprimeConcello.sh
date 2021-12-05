@@ -15,6 +15,12 @@ function devuelveCarpetaEjecucion()
 devuelveCarpetaEjecucion
 
 
+# Se van a borrar los ficheros csv con mas de 45 dias de antiguedad
+echo "Ficheros que se borran:"
+find ${CARPETA} -type f -mtime +45 -daystart | grep ".csv" | sort -u | xargs -I % sh -c 'ls  -l %; rm %'
+
+
+
 MES_ANTERIOR=$(date --date="$(date +'%Y-%m-01') - 1 month" +"%Y%m")
 FICH_ZIP="${CARPETA}/${MES_ANTERIOR}_IncidenciaConcello.zip"
 
