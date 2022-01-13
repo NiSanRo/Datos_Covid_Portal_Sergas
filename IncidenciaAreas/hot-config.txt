@@ -29,8 +29,8 @@
         {
           "COMMENT": "Origen de datos para la sección 'Número de personas diagnosticadas a través de PCR, por fecha'",
           "NAME": "date_accumulate",
-          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_InfectadosPorFecha_PDIA.csv",
-          "FALLBACK": "libs/data-fallback/COVID19_Web_InfectadosPorFecha_PDIA.csv"
+          "URL": "/infodatos/{NOW|YYYY-MM-DD}_COVID19_Web_InfectadosPorFecha_PDIA_Autotest.csv",
+          "FALLBACK": "libs/data-fallback/COVID19_Web_InfectadosPorFecha_PDIA_Autotest.csv"
         },
         {
           "COMMENT": "Origen de datos para la sección 'Número de personas infectadas, por género'",
